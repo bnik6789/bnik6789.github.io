@@ -1,0 +1,173 @@
+.block {
+    border: double;
+    width: 150px;
+    background-color: #bdbdbd!important;
+    padding: 10px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .learnBlock {
+    width: 90px;
+    background-color: #d7ccc8;
+    padding: 5px 5px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    float:left;
+    outline: none;
+    border-radius: 3px;
+  }
+  .learnBlock:hover{
+    background-color:#aeaeae;
+  }
+  .learnBlock:active{
+    background-color: #aeaeae;
+    transform: translateY(4px);
+  }
+  .learnFundaBlock{
+    width: 90px;
+    background-color: #b0bec5;
+    padding: 5px 5px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    float:left;
+    outline: none;
+    border-radius: 3px;
+  }
+  .learnFundaBlock:hover{
+    background-color:#808e95;
+  }
+  .learnBlock:active{
+    background-color: #808e95;
+    transform: translateY(4px);
+  }
+
+  .performBlock {
+    position: relative;
+    background-color: #bdbdbd!important;
+    border: none;
+    font-size: 11px;
+    padding: 5px 5px;
+    width: 150px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.45s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    display: none;
+  }
+
+.shuffleBlock{
+  position: relative;
+  width: 90px;
+  background-color: #ef9a9a;
+  padding: 5px 5px;
+  font-size: 11px;
+  cursor: pointer;
+  text-align: center;
+  display: none;
+  outline: none;
+  border-radius: 3px;
+}
+.shuffleBlock:hover{
+  background-color:#ba6b6c;
+}
+.shuffleBlock:active{
+  background-color: #ba6b6c;
+  transform: translateY(4px);
+}
+
+.inputBlock{
+  width: 40px;
+}
+ 
+.column {
+    float: left;
+    width: 33%;
+  }
+ .row:after {
+    content: "";
+    display: table;
+    margin-top: 100%;
+    clear: both;
+}
+
+  
+.title-amount p { 
+    display: inline; 
+  }
+ .title-amount span { 
+    float: inline;
+  }
+  .title-amout div {
+    float:inline;
+  }
+
+.button-select button{
+  float:left;
+}
+  .button-select select{
+  float:left;
+}
+
+.button-cost button{
+    display:block
+  }
+
+.knowledgeTab{
+    overflow: hidden;    
+    background-color: #f1f1f1;
+  }
+  .knowledgeTab button{
+    font-size: 11px;
+    background-color: inherit;
+    float: left;
+    border: inset;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 5px;
+    transition: 0.3s;
+  }
+  .knowledgeTabContent {
+    width: 400px;
+    display: block;
+    padding: 6px 6px;
+  }
+
+.shuffleStart{
+  visibility: hidden;
+}
+
+.magicKnowledgeGroup2{
+  visibility : hidden;
+  display: none;
+}
+.magicKnowledgeLearnGroup1{
+  visibility: hidden;
+  display: none;
+}
+.magicKnowledgeLearnGroup2{
+  visibility: hidden;
+  display: none;
+}
+.magicKnowledgeLearnGroup3{
+  visibility: hidden;
+  display: none;
+}
+.magicKnowledgeLearnGroup4{
+  visibility: hidden;
+  display: none;
+}
+
+.magicKnowledgeInputGroup1{
+  visibility: hidden;
+  display: none;
+}
+
+#performSelect{
+  margin: 10px 10px;
+}
