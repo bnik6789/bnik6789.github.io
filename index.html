@@ -8,14 +8,14 @@
 	<body>
 		<div class="row">
 			<div class="column" >
-                <p class="shuffleStart">You have a deck of cards.</p>
+                <p class="shuffleStart">You have <span id="numOfDecks">a</span> deck(s) of cards.</p>
 				<button id="shuffleButton" type="button" class="block shuffleStart" onClick="decks.shuffleDeck()">Shuffle Deck</button><br>
                 <p class="shuffleStart">Ways to shuffle a deck of cards: <span id="decksShuffled" class="shuffleStart">0</span></p>
                 
-                <p class="magicKnowledgeGroup1" style="font-size:18px;visibility: hidden"><b>Card Magic</b></p>
-				<p class="magicKnowledgeGroup1" style="visibility: hidden;">You begin to become familiar with a deck of cards.</p>
-				<p class="magicKnowledgeGroup1" style="visibility: hidden">Card Magic Knowledge Points (CMKP): <span class="magicKnowledgeGroup1" id="cardMagicKnowledgePoint"></span></p>
-                <p class="magicKnowledgeLearnGroup2" style="visibility: hidden; display:inline">Known Magic Tricks: <span id="learnMagic" class="magicKnowledgeLearnGroup2">0</span></p><br>
+                <p class="magicKnowledgeGroup1" style="font-size:19px;visibility:hidden"><b>Card Magic</b></p>
+				<p class="magicKnowledgeGroup1" style="visibility:hidden;">You begin to become familiar with a deck of cards.</p>
+				<p class="magicKnowledgeGroup1" style="visibility:hidden">Card Magic Knowledge Points (CMKP): <span class="magicKnowledgeGroup1" id="cardMagicKnowledgePoint"></span></p>
+                <p class="magicKnowledgeLearnGroup2" style="visibility:hidden;display:inline">Known Magic Tricks: <span id="learnMagic" class="magicKnowledgeLearnGroup2">0</span></p><br>
      
                 <div id="learnButtons">
                     <div class="knowledgeTab">
@@ -26,66 +26,78 @@
                     </div><br>
 
                     <div id="magicTricks" class="knowledgeTabContent">
-                        <button id="trickBasicCardTrickButton" type="button" style="visibility: hidden" class="learnBlock" onClick="magicTrick.buyTrick('trickBasicCardTrick')"><span id="trickBasicCardTrickL"></span> (<span id="trickBasicCardTrick">0</span>)<span id="trickBasicCardTrickC"></span><span id="trickBasicCardTrickRequires"></span></button> 
-                        <button id="trickBasicMathCardTrickButton" type="button" style="visibility: hidden" class="learnBlock" onClick="magicTrick.buyTrick('trickBasicMathCardTrick')"><span id="trickBasicMathCardTrickL"></span> (<span id="trickBasicMathCardTrick">0</span>)<span id="trickBasicMathCardTrickC"></span></span><span id="trickBasicMathCardTrickRequires"></span></button>
-                        <button id="trickBasicSnapCardTrickButton" type="button" style="visibility: hidden" class="learnBlock" onClick="magicTrick.buyTrick('trickBasicSnapCardTrick')"><span id="trickBasicSnapCardTrickL"></span> (<span id="trickBasicSnapCardTrick">0</span>)<span id="trickBasicSnapCardTrickC"></span></span><span id="trickBasicSnapCardTrickRequires"></span></button>
-                        <button id="trickBasicColorChangeTrickButton" type="button" style="visibility: hidden" class="learnBlock" onClick="magicTrick.buyTrick('trickBasicColorChangeTrick')"><span id="trickBasicColorChangeTrickL"></span> (<span id="trickBasicColorChangeTrick">0</span>) <span id="trickBasicColorChangeTrickC"></span></span><span id="trickBasicColorChangeTrickRequires"></span></button>
-                        <button id="trickBasicSpellingTrickButton" type="button" style="visibility: hidden" class="learnBlock" onClick="magicTrick.buyTrick('trickBasicSpellingTrick')"><span id="trickBasicSpellingTrickL"></span> (<span id="trickBasicSpellingTrick">0</span>) <span id="trickBasicSpellingTrickC"></span></span><span id="trickBasicSpellingTrickRequires"></span></button>
+                        <button id="trickBasicCardTrickButton" type="button" style="visibility:hidden;display:none" class="learnBlock" onClick="magicTrick.buyTrick('trickBasicCardTrick')"><span id="trickBasicCardTrickL"></span> (<span id="trickBasicCardTrick">0</span>)<span id="trickBasicCardTrickC"></span><span id="trickBasicCardTrickRequires"></span></button> 
+                        <button id="trickBasicMathCardTrickButton" type="button" style="visibility:hidden;display:none" class="learnBlock" onClick="magicTrick.buyTrick('trickBasicMathCardTrick')"><span id="trickBasicMathCardTrickL"></span> (<span id="trickBasicMathCardTrick">0</span>)<span id="trickBasicMathCardTrickC"></span></spanid> </span>><span id="trickBasicMathCardTrickRequires"></span></button>
+                        <button id="trickBasicSnapCardTrickButton" type="button" style="visibility:hidden;display:none" class="learnBlock" onClick="magicTrick.buyTrick('trickBasicSnapCardTrick')"><span id="trickBasicSnapCardTrickL"></span> (<span id="trickBasicSnapCardTrick">0</span>)<span id="trickBasicSnapCardTrickC"></span></span><span id="trickBasicSnapCardTrickRequires"></span></button>
+                        <button id="trickBasicColorChangeTrickButton" type="button" style="visibility:hidden;display:none" class="learnBlock" onClick="magicTrick.buyTrick('trickBasicColorChangeTrick')"><span id="trickBasicColorChangeTrickL"></span> (<span id="trickBasicColorChangeTrick">0</span>) <span id="trickBasicColorChangeTrickC"></span></span><span id="trickBasicColorChangeTrickRequires"></span></button>
+                        <button id="trickBasicSpellingTrickButton" type="button" style="visibility:hidden;display:none" class="learnBlock" onClick="magicTrick.buyTrick('trickBasicSpellingTrick')"><span id="trickBasicSpellingTrickL"></span> (<span id="trickBasicSpellingTrick">0</span>) <span id="trickBasicSpellingTrickC"></span></span><span id="trickBasicSpellingTrickRequires"></span></button>
                         
-                        <button id="trickMediumCardTrickButton" type="button" style="visibility: hidden" class="learnBlock" onClick="magicTrick.buyTrick('trickMediumCardTrick')"><span id="trickMediumCardTrickL"></span> (<span id="trickMediumCardTrick">0</span>)<span id="trickMediumCardTrickC"></span></span><span id="trickMediumCardTrickRequires"></span></button>
-                        <button id="trickMediumMathCardTrickButton" type="button" style="visibility: hidden" class="learnBlock" onClick="magicTrick.buyTrick('trickMediumMathCardTrick')"><span id="trickMediumMathCardTrickL"></span> (<span id="trickMediumMathCardTrick">0</span>)<span id="trickMediumMathCardTrickC"></span></span><span id="trickMediumMathCardTrickRequires"></span></button>
-                        <button id="trickMediumSnapCardTrickButton" type="button" style="visibility: hidden" class="learnBlock" onClick="magicTrick.buyTrick('trickMediumSnapCardTrick')"><span id="trickMediumSnapCardTrickL"></span> (<span id="trickMediumSnapCardTrick">0</span>)<span id="trickMediumSnapCardTrickC"></span></span><span id="trickMediumSnapCardTrickRequires"></span></button>
-                        <button id="trickMediumColorChangeTrickButton" type="button" style="visibility: hidden" class="learnBlock" onClick="magicTrick.buyTrick('trickMediumColorChangeTrick')"><span id="trickMediumColorChangeTrickL"></span> (<span id="trickMediumColorChangeTrick">0</span>) <span id="trickMediumColorChangeTrickC"></span></span><span id="trickMediumColorChangeTrickRequires"></span></button>
-                        <button id="trickMediumSpellingTrickButton" type="button" style="visibility: hidden" class="learnBlock" onClick="magicTrick.buyTrick('trickMediumSpellingTrick')"><span id="trickMediumSpellingTrickL"></span> (<span id="trickMediumSpellingTrick">0</span>)<span id="trickMediumSpellingTrickC"></span></span><span id="trickMediumSpellingTrickRequires"></span></button>
-
-                    </div></br>
+                        <button id="trickMediumCardTrickButton" type="button" style="visibility:hidden;display:none" class="learnBlock" onClick="magicTrick.buyTrick('trickMediumCardTrick')"><span id="trickMediumCardTrickL"></span> (<span id="trickMediumCardTrick">0</span>)<span id="trickMediumCardTrickC"></span></span><span id="trickMediumCardTrickRequires"></span></button>
+                        <button id="trickMediumMathCardTrickButton" type="button" style="visibility:hidden;display:none" class="learnBlock" onClick="magicTrick.buyTrick('trickMediumMathCardTrick')"><span id="trickMediumMathCardTrickL"></span> (<span id="trickMediumMathCardTrick">0</span>)<span id="trickMediumMathCardTrickC"></span></span><span id="trickMediumMathCardTrickRequires"></span></button>
+                        <button id="trickMediumSnapCardTrickButton" type="button" style="visibility:hidden;display:none" class="learnBlock" onClick="magicTrick.buyTrick('trickMediumSnapCardTrick')"><span id="trickMediumSnapCardTrickL"></span> (<span id="trickMediumSnapCardTrick">0</span>)<span id="trickMediumSnapCardTrickC"></span></span><span id="trickMediumSnapCardTrickRequires"></span></button>
+                        <button id="trickMediumColorChangeTrickButton" type="button" style="visibility:hidden;display:none" class="learnBlock" onClick="magicTrick.buyTrick('trickMediumColorChangeTrick')"><span id="trickMediumColorChangeTrickL"></span> (<span id="trickMediumColorChangeTrick">0</span>) <span id="trickMediumColorChangeTrickC"></span></span><span id="trickMediumColorChangeTrickRequires"></span></button>
+                        <button id="trickMediumSpellingTrickButton" type="button" style="visibility:hidden;display:none" class="learnBlock" onClick="magicTrick.buyTrick('trickMediumSpellingTrick')"><span id="trickMediumSpellingTrickL"></span> (<span id="trickMediumSpellingTrick">0</span>)<span id="trickMediumSpellingTrickC"></span></span><span id="trickMediumSpellingTrickRequires"></span></button>
+                    </div>
 
                     <div id="fundamentals" class="knowledgeTabContent" >
-                        <button id="fundaCardFlourishButton" type="button" style="visibility: hidden" class="learnFundaBlock" onClick="magicTrick.buyFunda('fundaCardFlourish')"><span id="fundaCardFlourishL"></span><span id="fundaCardFlourishC"></span></button>                                 
-                        <button id="fundaFalseShuffleButton" type="button" style="visibility: hidden" class="learnFundaBlock" onClick="magicTrick.buyFunda('fundaFalseShuffle')"><span id="fundaFalseShuffleL"></span><span id="fundaFalseShuffleC"></span></button>
-                        <button id="fundaCardForceButton" type="button" style="visibility: hidden" class="learnFundaBlock" onClick="magicTrick.buyFunda('fundaCardForce')"><span id="fundaCardForceL"></span><span id="fundaCardForceC"></span></button>
-                        <button id="fundaPalmingButton" type="button" style="visibility: hidden" class="learnFundaBlock" onClick="magicTrick.buyFunda('fundaPalming')"><span id="fundaPalmingL"></span><span id="fundaPalmingC"></span></button>                                 
-                        <button id="fundaDoubleLiftButton" type="button" style="visibility: hidden" class="learnFundaBlock" onClick="magicTrick.buyFunda('fundaDoubleLift')"><span id="fundaDoubleLiftL"></span><span id="fundaDoubleLiftC"></span></button>
-                        <button id="fundaSpreadCullButton" type="button" style="visibility: hidden" class="learnFundaBlock" onClick="magicTrick.buyFunda('fundaSpreadCull')"><span id="fundaSpreadCullL"></span><span id="fundaSpreadCullC"></span></button>
-                    </div></br>
+                        <button id="fundaCardFlourishButton" type="button" style="visibility:hidden" class="learnFundaBlock" onClick="magicTrick.buyFunda('fundaCardFlourish')"><span id="fundaCardFlourishL"></span><span id="fundaCardFlourishC"></span></button>                                 
+                        <button id="fundaFalseShuffleButton" type="button" style="visibility:hidden" class="learnFundaBlock" onClick="magicTrick.buyFunda('fundaFalseShuffle')"><span id="fundaFalseShuffleL"></span><span id="fundaFalseShuffleC"></span></button>
+                        <button id="fundaCardForceButton" type="button" style="visibility:hidden" class="learnFundaBlock" onClick="magicTrick.buyFunda('fundaCardForce')"><span id="fundaCardForceL"></span><span id="fundaCardForceC"></span></button>
+                        <button id="fundaPalmingButton" type="button" style="visibility:hidden" class="learnFundaBlock" onClick="magicTrick.buyFunda('fundaPalming')"><span id="fundaPalmingL"></span><span id="fundaPalmingC"></span></button>                                 
+                        <button id="fundaDoubleLiftButton" type="button" style="visibility:hidden" class="learnFundaBlock" onClick="magicTrick.buyFunda('fundaDoubleLift')"><span id="fundaDoubleLiftL"></span><span id="fundaDoubleLiftC"></span></button>
+                        <button id="fundaSpreadCullButton" type="button" style="visibility:hidden" class="learnFundaBlock" onClick="magicTrick.buyFunda('fundaSpreadCull')"><span id="fundaSpreadCullL"></span><span id="fundaSpreadCullC"></span></button>
+                    </div>
                     
                     <div id="shuffles" class="knowledgeTabContent">
-                        <button id="shuffleBasicRiffleButton" type="button" style="visibility: hidden; display:block" class="shuffleBlock" onClick="magicTrick.buyShuffle('shuffleBasicRiffle')"><span id="shuffleBasicRiffleL"></span> (<span id="shuffleBasicRiffle">0</span>)<span id="shuffleBasicRiffleC"></span></button>
-                        <button id="shuffleBasicSwapButton" type="button" style="visibility: hidden; display:block" class="shuffleBlock" onClick="magicTrick.buyShuffle('shuffleBasicSwap')"><span id="shuffleBasicSwapL"></span> (<span id="shuffleBasicSwap">0</span>)<span id="shuffleBasicSwapC"></span></button>
+                        <button id="shuffleBasicRiffleButton" type="button" style="visibility:hidden;display:none" class="shuffleBlock" onClick="magicTrick.buyShuffle('shuffleBasicRiffle')"><span id="shuffleBasicRiffleL"></span> (<span id="shuffleBasicRiffle">0</span>)<span id="shuffleBasicRiffleC"></span></button>
+                        <button id="shuffleBasicCutButton" type="button" style="visibility:hidden;display:none" class="shuffleBlock" onClick="magicTrick.buyShuffle('shuffleBasicCut')"><span id="shuffleBasicCutL"></span> (<span id="shuffleBasicCut">0</span>)<span id="shuffleBasicCutC"></span></button>
+                        <button id="shuffleBasicSwapButton" type="button" style="visibility:hidden;display:none" class="shuffleBlock" onClick="magicTrick.buyShuffle('shuffleBasicSwap')"><span id="shuffleBasicSwapL"></span> (<span id="shuffleBasicSwap">0</span>)<span id="shuffleBasicSwapC"></span></button>
                     </div>       
                 </div>
             </div>             
         
 	    	<div class="column">
-                <p class="magicKnowledgeGroup2" style="font-size:18px;visibility: hidden"><b>Performances</b></p>
+                <p class="magicKnowledgeGroup2" style="font-size:19px;visibility:hidden"><b>Performances</b></p>
                 <p class="magicKnowledgeGroup2">You are now confident enough to perform for an audience.</p>
                 
                 <div><button id="friendsAndFamilyButton" class="performBlock" onClick="perform.perform('friendsAndFamily')"><span id="friendsAndFamilyL"></span><span id="friendsAndFamilyC"></span></button>
-                <p id="friendsAndFamilyCooldown" style="visibility: hidden">Cooldown: <span id="friendsAndFamilyCooldownTime" ></span></p> </div>
+                <p id="friendsAndFamilyCooldown" style="visibility:hidden">Cooldown: <span id="friendsAndFamilyCooldownTime"></span></p> </div>
                     
                 <div><button id="streetMagicButton" class="performBlock" onClick="perform.perform('streetMagic')"><span id="streetMagicL"></span><span id="streetMagicC"></span></button>
-                <p id="streetMagicCooldown" style="visibility: hidden">Cooldown: <span id="streetMagicCooldownTime" ></span></p></div>
+                <p id="streetMagicCooldown" style="visibility:hidden">Cooldown: <span id="streetMagicCooldownTime"></span></p></div>
                         
                 <div><button id="moreStreetMagicButton" class="performBlock" onClick="perform.perform('moreStreetMagic')"><span id="moreStreetMagicL"></span><span id="moreStreetMagicC"></span></button>
-                <p id="moreStreetMagicCooldown" style="visibility: hidden">Cooldown: <span id="moreStreetMagicCooldownTime" ></span></p></div>
+                <p id="moreStreetMagicCooldown" style="visibility:hidden">Cooldown: <span id="moreStreetMagicCooldownTime"></span></p></div>
                 
             </div>
 
             <div class="column" >
-                <p class="moneyGroup1" style="visibility:hidden"><b>Funds</b></p>
+                <p class="moneyGroup1" style="font-size:19px;visibility:hidden"><b>Funds</b></p>
                 <p class="moneyGroup1" style="visibility:hidden">Balance: $<span id="balance" class="moneyGroup1"></span></p>
-                <p class="moneyGroup1" style="visibility:hidden">Worker Decks Shuffled: <span id="workerDecks" class="moneyGroup1">0</span></p>
-                <button id="aquireButton" class="moneyGroup1" style="visibility:hidden" onClick="autoShuffle.aquireDecks()">Aquire Decks <span id="aquireC"></span></button>
                 <div id="helperButtons">
-                    <button id="friendButton" style="visibility: hidden" onClick="autoShuffle.addShuffle('friend')"><span id="friendL"></span> <span id="friendC"></span></button>
-                    <button id="randomPersonButton" style="visibility: hidden" onClick="autoShuffle.addShuffle('randomPerson')"><span id="randomPersonL"></span> <span id="randomPersonC"></span></button>
+                    <p class="hireGroup1" style="visibility:hidden"><u>Workers</u></p>
+                    <p class="deckUpgradeGroup2" style="visibility:hidden;display:none">Each Worker has <span id="numOfWorkerDecks">1</span> deck(s) of cards</p>
+                    <p class="hireGroup1" style="visibility:hidden">Worker Decks Shuffled: <span id="workerDecks" class="moneyGroup1">0</span></p>
+                    <button id="aquireButton" class="moneyGroup1" style="visibility:hidden" onClick="autoShuffle.aquireDecks()">Aquire Decks <span id="aquireC"></span></button><br>
+                    <button id="friendButton" style="visibility:hidden" onClick="autoShuffle.buyShuffler('friend')"><span id="friendL"></span> (<span id="friend">0</span>) <span id=></span><span id="friendC"></span></button>
+                    <button id="randomPersonButton" style="visibility:hidden" onClick="autoShuffle.buyShuffler('randomPerson')"><span id="randomPersonL"></span> (<span id="randomPerson">0</span>)<span id="randomPersonC"></span></button>
+                    <button id="amatureMagicianButton" style="visibility:hidden" onClick="autoShuffle.buyShuffler('amatureMagician')"><span id="amatureMagicianL"></span> (<span id="amatureMagician">0</span>)<span id="amatureMagicianC"></span></button>
+                    <button id="stageMagicianButton" style="visibility:hidden" onClick="autoShuffle.buyShuffler('stageMagician')"><span id="stageMagicianL"></span> (<span id="stageMagician">0</span>)<span id="stageMagicianC"></span></button>
+                </div>
+                <div id="deckUpgradeButtons">
+                    <p class="deckUpgradeGroup1" style="visibility:hidden"><u>Deck Upgrades</u></p>
+                    <div id="personalDeckD" style="visibility:hidden" class="deckUpgrade" ><span id="personalDeckL"></span>
+                        <input id="personalDeckInput" class="deckUpgradeInput" type="number"> <button id="personalDeckButton" onClick="decks.buyPersonalDeckUpgrade()">Buy</button>
+                        <span id="personalDeckEL">Decks</span><br> <b><span id="personalDeckC"></span></b></div>
+                    <div id="workerDeckD" style="visibility:hidden" class="deckUpgrade" ><span id="workerDeckL"></span>
+                        <input id="workerDeckInput" class="deckUpgradeInput" type="number"><button id="workerDeckButton" onClick="decks.buyWorkerDeckUpgrade()">Buy</button> 
+                        <span id="workerDeckEL">Decks for each Worker</span><br> <b><span id="workerDeckC"></span></b></div>
                 </div>
             </div>
         </div>
     
         <script type="text/javascript" src="jsfi/autoShuffle.js"></script>
         <script type="text/javascript" src="jsfi/perform.js"></script>
-        <script type="text/javascript" src="jsfi/inputs.js"></script>
         <script type="text/javascript" src="jsfi/button.js"></script>
         <script type="text/javascript" src="jsfi/decks.js"></script>
         <script type="text/javascript" src="jsfi/magicTrick.js"></script>

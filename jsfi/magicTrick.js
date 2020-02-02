@@ -31,7 +31,7 @@ var magicTrick = {
 		},
 		"trickBasicSnapCardTrick": {
 			"idName": "trickBasicSnapCardTrick",
-			"label": "Snap Card Trick",
+			"label": "Basic Snap Card Trick",
 			"cost": 11,
 			"decksShuffled": 20,
 			"owned": 0,
@@ -42,7 +42,7 @@ var magicTrick = {
 		},
 		"trickBasicColorChangeTrick": {
 			"idName": "trickBasicColorChangeTrick",
-			"label": "Color Change Trick",
+			"label": "Basic Color Change Trick",
 			"cost": 11,
 			"decksShuffled": 20,
 			"owned": 0,
@@ -68,7 +68,7 @@ var magicTrick = {
 			"cost": 34,
 			"decksShuffled": 20,
 			"owned": 0,
-			"preres": ["fundaCardForce"],
+			"preres": ["fundaCardForce","fundaPalming"],
 			"performLife": 0,
 			"magicKnowledgeLearnGroup": 6,
 			"maxTrick": 30
@@ -86,11 +86,11 @@ var magicTrick = {
 		},
 		"trickMediumSnapCardTrick": {
 			"idName": "trickMediumSnapCardTrick",
-			"label": "Snap Card Trick",
+			"label": "Medium Snap Card Trick",
 			"cost": 52,
 			"decksShuffled": 20,
 			"owned": 0,
-			"preres":  ["fundaCardForce"],
+			"preres":  ["fundaCardForce", "fundaDoubleLift"],
 			"performLife": 0,
 			"magicKnowledgeLearnGroup": 7,
 			"maxTrick": 20
@@ -101,18 +101,18 @@ var magicTrick = {
 			"cost": 52,
 			"decksShuffled": 20,
 			"owned": 0,
-			"preres": ["fundaCardForce"],
+			"preres": ["fundaCardForce", "fundaDoubleLift"],
 			"performLife": 0,
 			"magicKnowledgeLearnGroup": 7,
 			"maxTrick": 20
 		},
 		"trickMediumSpellingTrick": {
 			"idName": "trickMediumSpellingTrick",
-			"label": "Medium Color Spelling Trick",
+			"label": "Medium Spelling Trick",
 			"cost": 73,
 			"decksShuffled": 20,
 			"owned": 0,
-			"preres": ["fundaFalseShuffle", "fundaCardForce"],
+			"preres": ["fundaFalseShuffle", "fundaSpreadCull"],
 			"performLife": 0,
 			"magicKnowledgeLearnGroup": 8,
 			"maxTrick": 55
@@ -178,23 +178,21 @@ var magicTrick = {
 			"decksShuffled": 20,
 			"numOfDecks" : 1,
 			"owned": 0,
-			"magicKnowledgeLearnGroup" : 4
+			"magicKnowledgeLearnGroup" : 3
 		},
-		
 		"shuffleBasicCut" : { 
 			"idName" : "shuffleBasicCut",
 			"label": "Basic Card Shuffle",
-			"cost": 15,
+			"cost": 25,
 			"decksShuffled": 20,
 			"numOfDecks" : 1.5,
 			"owned": 0,
 			"magicKnowledgeLearnGroup" : 4		
 		},
-
 		"shuffleBasicSwap" : { 
 			"idName" : "shuffleBasicSwap",
 			"label": "Basic Swap Shuffle",
-			"cost": 21,
+			"cost": 30,
 			"decksShuffled": 20,
 			"numOfDecks" : 2,
 			"owned": 0,
@@ -214,29 +212,6 @@ var magicTrick = {
 		return this.shuffleButtons;
 	},
 	
-	getMagicTrickIds : function(){
-		var magicTrickIds = [];
-		for (var idName in this.magicTrickButtons){
-			magicTrickIds.push(idName);
-		}
-		return magicTrickIds;
-	},
-
-	getFundamentalIds : function(){
-		var fundamentalIds = [];
-		for (var idName in this.fundamentalButtons){
-			fundamentalIds.push(idName);
-		}
-		return fundamentalIds;
-	},
-
-	getShuffleIds : function(){
-		var shuffleIds = [];
-		for (var idName in this.shuffleButtons){
-			shuffleIds.push(idName);
-		}
-		return shuffleIds;
-	},
 
 	addOwned : function(id){
 		this.magicTrickButtons[id].owned += 1;
@@ -305,7 +280,7 @@ var magicTrick = {
 			$("#" +id).html(this.shuffleButtons[id].owned);
 			decks.updateCardMagicKnowledgePoint();
 
-			decks.addNumOfDeckShuffled(this.shuffleButtons[id].numOfDecks);
+			decks.addNumOfDecksShuffler(this.shuffleButtons[id].numOfDecks);
 		}
 	},
 

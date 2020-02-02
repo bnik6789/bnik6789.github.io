@@ -1,11 +1,36 @@
 var decks = {
 
-    decksShuffled : 0, // total number of decks
-    decksPerSecond : 0,
+    decksShuffled : 0, //total number of decks shuffled after a click
     cardMagicKnowledgePoint: 0,
     cardMagicKnowledgePointTotal : 0,
     cardMagicKnowledgePointBought : 0,
-    numOfDeckShuffled : 1, //Number of decks shuffled per click
+    numOfDecksShuffler : 1, //Number of decks shuffled per click after shuffled bought
+
+
+    deckUpgradeButtons : {
+        "personalDeck" : {
+            "idName": "personalDeck",
+            "label" : "Personal Deck",
+            "addedDeck": 1,
+            "owned": 1,
+            "costFor1" : 7.33,
+            "shown": false,
+            "deckUpgradeGroup": 1
+        },
+        "workerDeck" : {
+            "idName": "workerDeck",
+            "label" : "Worker Decks",
+            "addedDeck": 1,
+            "owned": 1,
+            "costFor1" : 7.33,
+            "shown": false,
+            "deckUpgradeGroup": 2
+        },
+    },
+
+    getDeckUpgrades : function(){
+		return this.deckUpgradeButtons;
+    },
 
     setDeckShuffled : function(num){
         this.decksShuffled = num;
@@ -20,12 +45,32 @@ var decks = {
         this.updateDecksShuffled();
     },
 
-    setDecksPerSecond : function(num){
-        this.decksPerSecond = num;
+    getNumOfDecks : function(){
+        return this.deckUpgradeButtons["personalDeck"].owned;
     },
 
-    updateDecksPerSecond : function(){
-        this.decksPerSecond = autoShuffle.getDecksPerTick();
+    setNumOfDecks : function(num){
+        this.deckUpgradeButtons["personalDeck"].owned = num;
+    },
+
+    addNumOfDecks : function(num){
+        this.deckUpgradeButtons["personalDeck"].owned += num;
+    },
+
+    getNumOfDecksShuffler : function(){
+        return this.numOfDecksShuffler;
+    },
+
+    setNumOfDecksShuffler : function(num){
+        this.numOfDecksShuffler = num;
+    },
+
+    addNumOfDecksShuffler : function(num){
+        this.numOfDecksShuffler += num;
+    },
+    
+    getCardMagicKnowledgePoint : function(){
+        return this.cardMagicKnowledgePoint;
     },
 
     setCardMagicKnowledgePointTotal : function(num){
@@ -44,6 +89,10 @@ var decks = {
         this.cardMagicKnowledgePoint = num;        
     },
 
+    updateDecksPerSecond : function(){
+        this.decksPerSecond = autoShuffle.getDecksPerTick();
+    },
+
     updateDecksShuffled : function(){
         $("#decksShuffled").html(Math.floor(this.decksShuffled));
     },
@@ -56,24 +105,57 @@ var decks = {
         this.setCardMagicKnowledgePointTotal(Math.floor(this.decksShuffled/12));
     },
 
-    setNumOfDeckShuffled : function(num){
-        this.numOfDeckShuffled = num;
-    },
-
-    addNumOfDeckShuffled : function(num){
-        this.numOfDeckShuffled += num;
-        this.updateDecksShuffled;
-    },
-    
-    getCardMagicKnowledgePoint : function(){
-        return this.cardMagicKnowledgePoint;
+    showing : function(id){
+        this.deckUpgradeButtons[id].shown = true;
     },
 
     shuffleDeck : function(){
-        this.setDeckShuffled(this.decksShuffled + this.numOfDeckShuffled);
+        this.setDeckShuffled(this.decksShuffled + (this.deckUpgradeButtons["personalDeck"].owned * this.numOfDecksShuffler));
         this.updateCardMagicKnowledgePointTotal();
         this.updateCardMagicKnowledgePoint();
         this.updateDecksShuffled();
+    },
+
+    updateDeckUpgradeCost : function(){
+        this.updatePersonalDeckUpgradeCost();
+        this.updateWorkerDeckUpgradeCost();
+    },
+
+    updatePersonalDeckUpgradeCost : function(){
+        var amount = parseInt($("#personalDeckInput").val());
+        if (this.deckUpgradeButtons["personalDeck"].shown == true && (amount >= 0)){
+            $("#personalDeckC").html("$" + (amount * this.deckUpgradeButtons["personalDeck"].costFor1 * money.getTax()).toFixed(2));
+        }
+    },
+
+    updateWorkerDeckUpgradeCost : function(){
+        var amount = parseInt($("#workerDeckInput").val());
+        var deckAmount = amount * autoShuffle.getTotalWorkerDecks(); 
+        if (this.deckUpgradeButtons["workerDeck"].shown == true && (amount >= 0)){
+            $("#workerDeckC").html("$" + (deckAmount * this.deckUpgradeButtons["workerDeck"].costFor1 * money.getTax()).toFixed(2));
+        }
+    },
+
+    buyPersonalDeckUpgrade : function(){
+        var amount = parseInt($("#personalDeckInput").val());
+        var cost = (this.deckUpgradeButtons["personalDeck"].costFor1 * amount * money.getTax()).toFixed(2);
+        if(money.getBalance() >= cost && amount > 0){
+            this.addNumOfDecks(amount);
+            money.widthdrawBalance(cost);
+            $("#numOfDecks").html(this.deckUpgradeButtons["personalDeck"].owned);
+        }
+    },
+
+    buyWorkerDeckUpgrade : function(){
+        var amount = parseInt($("#workerDeckInput").val());
+        var deckAmount = amount * autoShuffle.getTotalWorkerDecks(); 
+        var cost = (this.deckUpgradeButtons["workerDeck"].costFor1 * deckAmount * money.getTax()).toFixed(2);
+        if(money.getBalance() >= cost && amount > 0){
+            autoShuffle.addTotalWorkerDecks(deckAmount);
+            money.widthdrawBalance(cost);
+            $("#numOfWorkerDecks").html(this.deckUpgradeButtons["workerDeck"].owned);
+            autoShuffle.addWorkerDecks(1);
+        }
     },
 
     loadStart : function(){

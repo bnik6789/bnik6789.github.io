@@ -1,5 +1,6 @@
 var money ={
     balance : 0,
+    tax : 1.02,
 
     getBalance : function(){
         return this.balance;
@@ -7,6 +8,14 @@ var money ={
 
     setBalance : function(num){
         this.balance = num;
+    },
+    
+    getTax : function(){
+        return this.tax;
+    },
+
+    setTax : function(num){
+        this.tax = num;
     },
 
     depositBalance : function(num){
