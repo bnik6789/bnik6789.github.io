@@ -50,7 +50,7 @@ var button = {
         }
     },
 
-    learnFundamentalButton : function(cl){s
+    learnFundamentalButton : function(cl){
         var f = magicTrick.getFundamental();
         var fundamentals = this.getIds(f);
         var i;
