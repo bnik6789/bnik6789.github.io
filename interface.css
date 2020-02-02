@@ -62,14 +62,13 @@
   }
 
 .shuffleBlock{
-  position: relative;
   width: 90px;
   background-color: #ef9a9a;
   padding: 5px 5px;
   font-size: 11px;
   cursor: pointer;
   text-align: center;
-  display: none;
+  float: left;
   outline: none;
   border-radius: 3px;
 }
@@ -163,11 +162,15 @@
   display: none;
 }
 
-.magicKnowledgeInputGroup1{
-  visibility: hidden;
-  display: none;
+.deckUpgrade {
+  border: 3px groove;
+  width: 100px;
+  padding: 5px 5px;
+}
+.deckUpgradeInput{
+  width: 30px;
 }
 
 #performSelect{
-  margin: 10px 10px;
+  margin: 5px 5px;
 }
