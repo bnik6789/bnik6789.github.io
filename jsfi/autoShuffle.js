@@ -2,10 +2,10 @@ var autoShuffle ={
 
     decksPerTick : 0,
     shufflersDecks : 0,
-    workerDecks : 1,
+    workerDecks : 0,
     totalWorkerDeck : 0,
     aquireDeckTimer : 0,
-    numOfWorkers : 0, //some changes 
+    numOfWorkers : 0,
 
     autoShufflers : {
         "friend":{
