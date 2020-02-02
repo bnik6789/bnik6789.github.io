@@ -5,7 +5,7 @@ var autoShuffle ={
     workerDecks : 1,
     totalWorkerDeck : 0,
     aquireDeckTimer : 0,
-    numOfWorkers : 0,
+    numOfWorkers : 0, //some changes 
 
     autoShufflers : {
         "friend":{
