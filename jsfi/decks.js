@@ -130,7 +130,7 @@ var decks = {
 
     updateWorkerDeckUpgradeCost : function(){
         var amount = parseInt($("#workerDeckInput").val());
-        var deckAmount = amount * autoShuffle.getTotalWorkerDecks(); 
+        var deckAmount = amount * autoShuffle.getNumOfWorker(); 
         if (this.deckUpgradeButtons["workerDeck"].shown == true && (amount >= 0)){
             $("#workerDeckC").html("$" + (deckAmount * this.deckUpgradeButtons["workerDeck"].costFor1 * money.getTax()).toFixed(2));
         }
@@ -148,11 +148,12 @@ var decks = {
 
     buyWorkerDeckUpgrade : function(){
         var amount = parseInt($("#workerDeckInput").val());
-        var deckAmount = amount * autoShuffle.getTotalWorkerDecks(); 
+        var deckAmount = amount * autoShuffle.getNumOfWorker(); 
         var cost = (this.deckUpgradeButtons["workerDeck"].costFor1 * deckAmount * money.getTax()).toFixed(2);
         if(money.getBalance() >= cost && amount > 0){
             autoShuffle.addTotalWorkerDecks(deckAmount);
             money.widthdrawBalance(cost);
+            this.deckUpgradeButtons["workerDeck"].owned += amount;
             $("#numOfWorkerDecks").html(this.deckUpgradeButtons["workerDeck"].owned);
             autoShuffle.addWorkerDecks(1);
         }

@@ -2,7 +2,7 @@ var autoShuffle ={
 
     decksPerTick : 0,
     shufflersDecks : 0,
-    workerDecks : 0,
+    workerDecks : 1,
     totalWorkerDeck : 0,
     aquireDeckTimer : 0,
     numOfWorkers : 1,
@@ -44,6 +44,18 @@ var autoShuffle ={
 
     getAutoShuffler : function(){
         return this.autoShufflers;
+    },
+
+    setNumOfWorker : function(num){
+        this.numOfWorkers = num;
+    },
+
+    getNumOfWorker : function(){
+        return this.numOfWorkers;
+    },
+
+    addNumOfWorker : function(num){
+        this.numOfWorkers += num;
     },
 
     setWorkerDecks : function(num){
@@ -101,6 +113,7 @@ var autoShuffle ={
             this.autoShufflers[id].owned += 1;
             $("#" + this.autoShufflers[id].idName).html(this.autoShufflers[id].owned);
             this.addTotalWorkerDecks(1);
+            this.addNumOfWorker(1);
         }
     },
 
