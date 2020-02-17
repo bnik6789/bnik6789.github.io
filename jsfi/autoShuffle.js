@@ -139,5 +139,10 @@ var autoShuffle ={
                 this.setAquireTimer(30);
             }
         }
-    }
+    },
+
+    loadStart : function(){
+        $(".hireGroup1").css("visibility","hidden");
+    },
+
 }

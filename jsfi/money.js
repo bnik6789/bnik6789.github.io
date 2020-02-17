@@ -30,5 +30,8 @@ var money ={
         $("#balance").html(Number(this.balance).toFixed(2));
     },
     
+    loadStart : function(){
+        $(".moneyGroup1").css("visibility","hidden");
+    },
     
 }

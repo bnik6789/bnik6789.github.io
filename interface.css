@@ -141,27 +141,6 @@
   visibility: hidden;
 }
 
-.magicKnowledgeGroup2{
-  visibility : hidden;
-  display: none;
-}
-.magicKnowledgeLearnGroup1{
-  visibility: hidden;
-  display: none;
-}
-.magicKnowledgeLearnGroup2{
-  visibility: hidden;
-  display: none;
-}
-.magicKnowledgeLearnGroup3{
-  visibility: hidden;
-  display: none;
-}
-.magicKnowledgeLearnGroup4{
-  visibility: hidden;
-  display: none;
-}
-
 .deckUpgrade {
   border: 3px groove;
   width: 100px;
@@ -169,8 +148,4 @@
 }
 .deckUpgradeInput{
   width: 30px;
-}
-
-#performSelect{
-  margin: 5px 5px;
 }

@@ -12,6 +12,17 @@ var perform = {
             "cooldownTime" : 0,
             "magicKnowledgePerformGroup" : 1
         },
+        "partyTrick" : {
+           "idName" : "partyTrick",
+           "label" : "Party Trick",
+           "tricks" : 6,
+           "costFactor" : 1,
+            "moneyFactor" : .75, 
+            "startCooldownTime" : 10,
+            "cooldownFactor" : 1.11,
+            "cooldownTime" : 0,
+            "magicKnowledgePerformGroup" : 1
+        },
         "streetMagic" : {
             "idName" : "streetMagic",
             "label" : "Street Magic",
@@ -21,7 +32,7 @@ var perform = {
             "startCooldownTime" : 10,
             "cooldownFactor" : 1.13,
             "cooldownTime" : 0,
-            "magicKnowledgePerformGroup" : 1
+            "magicKnowledgePerformGroup" : 2
         },
         "moreStreetMagic" : {
             "idName" : "moreStreetMagic",
@@ -32,7 +43,7 @@ var perform = {
             "startCooldownTime" : 14,
             "cooldownFactor" : 1.25,
             "cooldownTime" : 0,
-            "magicKnowledgePerformGroup" : 2
+            "magicKnowledgePerformGroup" : 3
         }
     },
 

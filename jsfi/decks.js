@@ -163,6 +163,12 @@ var decks = {
         decks.setDeckShuffled(0);
         decks.setCardMagicKnowledgePointBought(0);
         decks.setCardMagicKnowledgePointTotal(0);
+        $(".deckUpgrade").css("visibility","hidden");
+        $(".deckUpgrade").css("display","none");
+        $(".deckUpgradeGroup1").css("visibility","hidden");
+        $(".deckUpgradeGroup1").css("display","none");
+        $(".deckUpgradeGroup2").css("visibility","hidden");
+        $(".deckUpgradeGroup2").css("display","none");
     },
     
 };

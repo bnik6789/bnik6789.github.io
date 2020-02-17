@@ -3,9 +3,9 @@ var button = {
     start : false,
        
     showLearnButton : function(cl){
-        this.learnMagicTrickButton(cl);
-        this.learnFundamentalButton(cl);
-        this.learnShuffleButton(cl);
+        this.learnTrickButton(cl, magicTrick.getMagicTrick());
+        this.learnTrickButton(cl, magicTrick.getFundamental());
+        this.learnTrickButton(cl, magicTrick.getShuffle());
     },
 
     hideButton : function(id){
@@ -24,20 +24,19 @@ var button = {
 		return ids;
     },
 
-    learnMagicTrickButton : function(cl){
-        var m = magicTrick.getMagicTrick(); 
+    learnTrickButton(cl, trickGroup){
         var i;
-        var tricks = this.getIds(m);
+        var trickId = this.getIds(trickGroup);
         var fundamentals = magicTrick.getFundamental();
-        for (i = 0; i < tricks.length; i++){
-            var id = m[tricks[i]];
+        for (i = 0; i < trickId.length; i++){
+            var id = trickGroup[trickId[i]];
             if (id.magicKnowledgeLearnGroup == cl){
                 $("#"+id.idName+"Button").css("visibility", "visible");
                 $("#"+id.idName+"Button").css("display", "block");
                 $("#"+id.idName+"L").html("Learn " + id.label);
                 $("#"+id.idName+"C").html( "<br><b>" +id.cost +" CMKP</b>");
                 var preres = id.preres;
-                if (preres.length != 0){
+                if (preres != null && preres.length != 0){
                     var resText = "Requires: ";
                     for (k = 0; k < preres.length; k++){
                         if (preres[k] != null){
@@ -45,38 +44,8 @@ var button = {
                         }
                     }
                     $("#"+id.idName+"Requires").html("</br><i>" + resText +"</i>");
-                }  
+                }
             }
-        }
-    },
-
-    learnFundamentalButton : function(cl){
-        var f = magicTrick.getFundamental();
-        var fundamentals = this.getIds(f);
-        var i;
-        for (i = 0; i < fundamentals.length; i++){
-            var id = f[fundamentals[i]];
-            if (id.magicKnowledgeLearnGroup == cl){
-                $("#"+id.idName+"Button").css("visibility", "visible");
-                $("#"+id.idName+"Button").css("display", "block");
-                $("#"+id.idName+"L").html("Learn " + id.label);
-                $("#"+id.idName+"C").html( "<br><b>" + id.cost + " CMKP</b>");
-          }
-        }
-    },
-
-    learnShuffleButton : function(cl){
-        var s = magicTrick.getShuffle();
-        var shuffles = this.getIds(s);
-        var i;
-        for (i = 0; i < shuffles.length; i++){
-            var id = s[shuffles[i]];
-            if (id.magicKnowledgeLearnGroup == cl){
-                $("#"+id.idName+"Button").css("visibility", "visible");
-                $("#"+id.idName+"Button").css("display", "block");
-                $("#"+id.idName+"L").html("Learn " + id.label);
-                $("#"+id.idName+"C").html( "<br><b>" + id.cost + " CMKP</b>");
-          }
         }
     },
 
@@ -120,6 +89,7 @@ var button = {
                 $("#"+id.idName).css("visibility", "visible");
                 $("#"+id.idName).css("display", "block");
                 $("#"+id.idName+"D").css("visibility", "visible");
+                $("#"+id.idName+"D").css("display", "block");
                 $("#"+id.idName+"L").html(id.label);
                 $("#"+id.idName+"EL").css("visibility", "visible");
                 $("#"+id.idName+"C").html("$" + (id.costFor1 * money.getTax()).toFixed(2));
@@ -142,6 +112,19 @@ var button = {
         $(".knowledgeTabLink").css("background-color", "#f1f1f1");
         $("#allTab").css("background-color", "#ffffff");
         event.currentTarget.className += " active";
+    },
+
+    loadStart : function(){
+        $(".learnBlock").css("visibility","hidden");
+        $(".learnBlock").css("display","none");
+        $(".learnFundaBlock").css("visibility","hidden");
+        $(".learnFundaBlock").css("display","none");
+        $(".shuffleBlock").css("visibility","hidden");
+        $(".shuffleBlock").css("display","none");
+        $(".performBlock").css("visibility","hidden");
+        $(".performBlock").css("display","none");
+        $(".autoShuffleBlock").css("visibility","hidden");
+        $(".autoShuffleBlock").css("display","none");
     }
 
 };
