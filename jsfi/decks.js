@@ -77,6 +77,10 @@ var decks = {
         this.cardMagicKnowledgePointTotal = num;
     },
 
+    getCardMagicKnowledgePointTotal : function(){
+        return this.getCardMagicKnowledgePointTotal;
+    },
+
     setCardMagicKnowledgePointBought : function(num){
         this.cardMagicKnowledgePointBought = num;
     },

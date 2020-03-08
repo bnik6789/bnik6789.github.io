@@ -7,7 +7,9 @@
 	
 	<body>
 		<div class="row">
-			<div class="column" >
+			<div class="column">
+                <button id="save">Save</button>
+                <button id="load">Load</button>
                 <p class="shuffleStart">You have <span id="numOfDecks">a</span> deck(s) of cards.</p>
 				<button id="shuffleButton" type="button" class="block shuffleStart" onClick="decks.shuffleDeck()">Shuffle Deck</button><br>
                 <p class="shuffleStart">Ways to shuffle a deck of cards: <span id="decksShuffled" class="shuffleStart">0</span></p>
@@ -52,6 +54,8 @@
                         <button id="shuffleBasicRiffleButton" type="button" class="shuffleBlock" onClick="magicTrick.buyShuffle('shuffleBasicRiffle')"><span id="shuffleBasicRiffleL"></span> (<span id="shuffleBasicRiffle">0</span>)<span id="shuffleBasicRiffleC"></span></button>
                         <button id="shuffleBasicCutButton" type="button" class="shuffleBlock" onClick="magicTrick.buyShuffle('shuffleBasicCut')"><span id="shuffleBasicCutL"></span> (<span id="shuffleBasicCut">0</span>)<span id="shuffleBasicCutC"></span></button>
                         <button id="shuffleBasicSwapButton" type="button" class="shuffleBlock" onClick="magicTrick.buyShuffle('shuffleBasicSwap')"><span id="shuffleBasicSwapL"></span> (<span id="shuffleBasicSwap">0</span>)<span id="shuffleBasicSwapC"></span></button>
+                        <button id="shuffleBasicFlourishShuffleButton" type="button" class="shuffleBlock" onClick="magicTrick.buyShuffle('shuffleBasicFlourishShuffle')"><span id="shuffleBasicFlourishShuffleL"></span> (<span id="shuffleBasicFlourishShuffle">0</span>)<span id="shuffleBasicFlourishShuffleC"></span></button>
+                        <button id="shuffleBasicPileShuffleButton" type="button" class="shuffleBlock" onClick="magicTrick.buyShuffle('shuffleBasicPileShuffle')"><span id="shuffleBasicPileShuffleL"></span> (<span id="shuffleBasicPileShuffle">0</span>)<span id="shuffleBasicPileShuffleC"></span></button>
                     </div>       
                 </div>
             </div>             
@@ -106,5 +110,6 @@
         <script type="text/javascript" src="jsfi/magicTrick.js"></script>
         <script type="text/javascript" src="jsfi/money.js"></script>
         <script type="text/javascript" src="jsfi/main.js"></script>
+        <script type="text/javascript" src="jsfi/save.js"></script>
 	</body>
 </html>

@@ -16,12 +16,12 @@ var main = {
 		
 		$(".shuffleStart").css("visibility", "visible");
 
+		window.setInterval(this.checkIntervalHTML.bind(this), 1);
 		window.setInterval(this.checkIntervalTenth.bind(this), 10);
 		window.setInterval(this.shuffleIntervalSec.bind(this), 1000);
 	},
 
-
-	checkIntervalTenth : function(){
+	checkIntervalHTML :	function(){
 		if (this.magicKnowledgeGroup == 1 && decks.getCardMagicKnowledgePoint() >= 5){
 			$(".magicKnowledgeGroup1").css("visibility", "visible");
 			$(".magicKnowledgeGroup1").css("display", "block");
@@ -115,8 +115,9 @@ var main = {
 			$(".deckUpgradeGroup2").css("display", "block");
 			button.showDeckUpgradeButton(2);
 		}
+	},
 
-
+	checkIntervalTenth : function(){
 		decks.updateCardMagicKnowledgePoint();
 		decks.updateDecksShuffled();
 		decks.updateDeckUpgradeCost();

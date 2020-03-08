@@ -124,7 +124,6 @@ var magicTrick = {
 			"idName": "fundaCardFlourish",
 			"label": "Card Flourish",
 			"cost": 8,
-			"decksShuffled": 20,
 			"owned": false,
 			"magicKnowledgeLearnGroup": 3
 		},
@@ -132,7 +131,6 @@ var magicTrick = {
 			"idName": "fundaFalseShuffle",
 			"label": "False Shuffle",
 			"cost": 12,
-			"decksShuffled": 20,
 			"owned": false,
 			"magicKnowledgeLearnGroup": 3
 		},
@@ -140,7 +138,6 @@ var magicTrick = {
 			"idName": "fundaCardForce",
 			"label": "Card Force",
 			"cost": 15,
-			"decksShuffled": 20,
 			"owned": false,
 			"magicKnowledgeLearnGroup": 4
 		},
@@ -148,7 +145,6 @@ var magicTrick = {
 			"idName": "fundaPalming",
 			"label": "Palming",
 			"cost": 27,
-			"decksShuffled": 20,
 			"owned": false,
 			"magicKnowledgeLearnGroup": 5
 		},
@@ -156,7 +152,6 @@ var magicTrick = {
 			"idName": "fundaDoubleLift",
 			"label": "Double Lift",
 			"cost": 35,
-			"decksShuffled": 20,
 			"owned": false,
 			"magicKnowledgeLearnGroup": 5
 		},
@@ -164,7 +159,6 @@ var magicTrick = {
 			"idName": "fundaSpreadCull",
 			"label": "Spread Cull",
 			"cost": 48,
-			"decksShuffled": 20,
 			"owned": false,
 			"magicKnowledgeLearnGroup": 6
 		},
@@ -175,7 +169,6 @@ var magicTrick = {
 			"idName" : "shuffleBasicRiffle",
 			"label": "Basic Riffle Shuffle",
 			"cost": 15,
-			"decksShuffled": 20,
 			"numOfDecks" : 1,
 			"owned": 0,
 			"magicKnowledgeLearnGroup" : 3
@@ -184,7 +177,6 @@ var magicTrick = {
 			"idName" : "shuffleBasicCut",
 			"label": "Basic Card Shuffle",
 			"cost": 25,
-			"decksShuffled": 20,
 			"numOfDecks" : 1.5,
 			"owned": 0,
 			"magicKnowledgeLearnGroup" : 4		
@@ -193,11 +185,26 @@ var magicTrick = {
 			"idName" : "shuffleBasicSwap",
 			"label": "Basic Swap Shuffle",
 			"cost": 30,
-			"decksShuffled": 20,
 			"numOfDecks" : 2,
 			"owned": 0,
 			"magicKnowledgeLearnGroup" : 4
-		}
+		},
+		"shuffleBasicFlourishShuffle" : { 
+			"idName" : "shuffleBasicFlourishShuffle",
+			"label": "Basic Swap Shuffle",
+			"cost": 45,
+			"numOfDecks" : 3,
+			"owned": 0,
+			"magicKnowledgeLearnGroup" : 4
+		},
+		"shuffleBasicPileShuffle" : { 
+			"idName" : "shuffleBasicPileShuffle",
+			"label": "Basic Swap Shuffle",
+			"cost": 65,
+			"numOfDecks" : 5,
+			"owned": 0,
+			"magicKnowledgeLearnGroup" : 4
+		},
 	},
 
 	getMagicTrick : function(){
