@@ -1,11 +1,10 @@
 var decks = {
 
-    decksShuffled : 0, //total number of decks shuffled after a click
+    decksShuffled: 0, //total number of decks shuffled after a click
     cardMagicKnowledgePoint: 0,
-    cardMagicKnowledgePointTotal : 0,
-    cardMagicKnowledgePointBought : 0,
-    numOfDecksShuffler : 1, //Number of decks shuffled per click after shuffled bought
-
+    cardMagicKnowledgePointTotal: 0,
+    cardMagicKnowledgePointBought: 0,
+    numOfDecksShuffler: 1, //Number of decks shuffled per click after shuffled bought
 
     deckUpgradeButtons : {
         "personalDeck" : {
@@ -43,6 +42,10 @@ var decks = {
     addDecksShuffled : function(num){
         this.decksShuffled += num;
         this.updateDecksShuffled();
+    },
+
+    getDeckUpgradeOwned : function(id){
+        return this.deckUpgradeButtons[id].owned;
     },
 
     getNumOfDecks : function(){

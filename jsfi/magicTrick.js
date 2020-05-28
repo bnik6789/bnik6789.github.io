@@ -4,7 +4,6 @@ var magicTrick = {
 	useableLearnMagic : 0,
 	performedLearnMagic : 0,
 	totalLearnMagic: 0,
-	maxTricks : 20,
 
 	magicTrickButtons: {
 		"trickBasicCardTrick": {
