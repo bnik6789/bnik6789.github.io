@@ -1,4 +1,4 @@
-# DeckOfCards
+# Card Tricks Game
 
 This is a basic incremental game I have made in my free time. I started this project to learn HTML, CSS, and JavaScript. The purpose of this game is to shuffle a deck of cards every possible way (52!).  
 
