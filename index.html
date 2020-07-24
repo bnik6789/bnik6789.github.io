@@ -63,7 +63,7 @@
 	    	<div class="column">
                 <p class="magicKnowledgeGroup2" style="font-size:19px"><b>Performances</b></p>
                 <p class="magicKnowledgeGroup2">You are now confident enough to perform for an audience.</p>
-                
+
                 <div><button id="friendsAndFamilyButton" class="performBlock" onClick="perform.perform('friendsAndFamily')"><span id="friendsAndFamilyL"></span><span id="friendsAndFamilyC"></span></button>
                 <p id="friendsAndFamilyCooldown" style="visibility:hidden">Cooldown: <span id="friendsAndFamilyCooldownTime"></span></p> </div>
 
@@ -76,13 +76,14 @@
                 <div><button id="moreStreetMagicButton" class="performBlock" onClick="perform.perform('moreStreetMagic')"><span id="moreStreetMagicL"></span><span id="moreStreetMagicC"></span></button>
                 <p id="moreStreetMagicCooldown" style="visibility:hidden">Cooldown: <span id="moreStreetMagicCooldownTime"></span></p></div>
                 
+                <p id="fade" style="visibility:hidden">You impressed someone! They now work for you.</p>
             </div>
 
             <div class="column" >
                 <p class="moneyGroup1" style="font-size:19px"><b>Funds</b></p>
                 <p class="moneyGroup1">Balance: $<span id="balance" class="moneyGroup1"></span></p>
                 <div id="helperButtons">
-                    <p class="hireGroup1"><u>Workers</u></p>
+                    <p class="hireGroup1"><u>Workers</u> (<span id="workers">0</span>)</p>
                     <p class="deckUpgradeGroup1" >Each Worker has <span id="numOfWorkerDecks">1</span> deck(s) of cards</p>
                     <p class="hireGroup1">Worker Decks Shuffled: <span id="workerDecks" class="moneyGroup1">0</span></p>
                     <button id="aquireButton" class="moneyGroup1" onClick="autoShuffle.aquireDecks()">Aquire Decks <span id="aquireC"></span></button><br>

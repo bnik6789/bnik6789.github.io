@@ -59,6 +59,16 @@ var perform = {
             $("#"+id+"Cooldown").css("visibility", "visible");
             $("#"+id+"CooldownTime").html(this.performances[id].cooldownTime - 1);
             magicTrick.setLearnMagic(magicTrick.getLearnMagic() - this.performances[id].tricks);
+
+            if (this.performances[id].magicKnowledgePerformGroup >= 3){
+                if ((Math.random() * 100) >= 90) {
+                    $("#fade").css("visibility", "visible");
+                    $("#fade").css("display", "block");
+                    $("#fade").fadeOut(2500);
+
+                    autoShuffle.buyShuffler("performanceFan");
+                }
+            }
         }
     },
 

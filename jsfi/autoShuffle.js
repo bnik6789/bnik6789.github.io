@@ -5,7 +5,7 @@ var autoShuffle ={
     workerDecks : 1,
     totalWorkerDeck : 0,
     aquireDeckTimer : 0,
-    numOfWorkers : 1,
+    numOfWorkers : 0,
 
     autoShufflers : {
         "friend":{
@@ -23,6 +23,14 @@ var autoShuffle ={
             "owned": 0,
             "cost" : 25,
             "hireGroup": 2
+        },
+        "performanceFan" : {
+            "idName": "performanceFan",
+            "label" : null,
+            "decksPerTick": 5,
+            "owned": 0,
+            "cost" : null,
+            "hireGroup": null
         },
         "amatureMagician":{
             "idName": "amatureMagician",
@@ -99,6 +107,10 @@ var autoShuffle ={
         this.aquireDeckTimer = num;
     },
 
+    updateNumOfWorkers : function(){
+        $("#workers").html(this.numOfWorkers +"");
+    },
+
     autoShuffleDeck : function(){
         if (this.aquireDeckTimer <= 0){
             this.addDecksShuffled((this.decksPerTick * this.workerDecks) );
@@ -114,6 +126,7 @@ var autoShuffle ={
             $("#" + this.autoShufflers[id].idName).html(this.autoShufflers[id].owned);
             this.addTotalWorkerDecks(1);
             this.addNumOfWorker(1);
+            this.updateNumOfWorkers();
         }
     },
 

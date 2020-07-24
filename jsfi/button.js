@@ -57,7 +57,7 @@ var button = {
             var id = p[performance[i]];
             if (id.magicKnowledgePerformGroup == cl){
                 $("#"+id.idName+"Button").css("visibility", "visible");
-                $("#"+id.idName+"Button").css("display", "block");
+                $("#"+id.idName+"Button").css("display", "inline");
                 $("#"+id.idName+"L").html( "Perform " +id.label);
                 $("#"+id.idName+"C").html( "<br><b>" +id.tricks +" Magic Tricks</b>");
           }
